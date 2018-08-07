@@ -1,0 +1,29 @@
+{
+  "name": "load-text-file",
+  "version": "0.0.0",
+  "license": "MIT",
+  "repository": "LinusU/load-text-file",
+  "scripts": {
+    "test": "standard && node test"
+  },
+  "dependencies": {
+    "graceful-fs": "^4.1.11",
+    "pify": "^3.0.0",
+    "strip-bom": "^3.0.0"
+  },
+  "devDependencies": {
+    "standard": "^11.0.1"
+  },
+  "engines": {
+    "node": ">=6"
+  },
+  "keywords": [
+    "file",
+    "fs",
+    "graceful",
+    "load",
+    "parse",
+    "read",
+    "text"
+  ]
+}
