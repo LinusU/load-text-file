@@ -7,8 +7,8 @@
     "test": "standard && node test"
   },
   "dependencies": {
-    "graceful-fs": "^4.1.11",
-    "pify": "^3.0.0",
+    "graceful-fs": "^4.0.0",
+    "pify": "^3.0.0 || ^4.0.0",
     "strip-bom": "^3.0.0"
   },
   "devDependencies": {
