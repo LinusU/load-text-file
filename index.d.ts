@@ -1,14 +1,5 @@
-interface LoadTextFile {
-  /**
-   * Returns a promise for the text content.
-   */
-  (filePath: string): Promise<string>
+/** @returns a promise for the text content */
+export function loadTextFile(path: string | Buffer | URL): Promise<string>
 
-  /**
-   * Returns the text content.
-   */
-  sync (filePath: string): string
-}
-
-declare const loadTextFile: LoadTextFile
-export = loadTextFile
+/** @returns the text content */
+export function loadTextFileSync(path: string | Buffer | URL): string

@@ -1,12 +1,14 @@
-const assert = require('assert')
-const loadTextFile = require('./')
-const fs = require('fs')
+import assert from 'node:assert'
+import fs from 'node:fs'
 
-assert.strictEqual(loadTextFile.sync('index.js'), fs.readFileSync('index.js').toString())
+import { loadTextFile, loadTextFileSync } from './index.js'
 
-loadTextFile('index.js').then((text) => {
-  assert.strictEqual(text, fs.readFileSync('index.js').toString())
-}).catch((err) => {
+async function main () {
+  assert.strictEqual(await loadTextFile('index.js'), fs.readFileSync('index.js').toString())
+  assert.strictEqual(loadTextFileSync('index.js'), fs.readFileSync('index.js').toString())
+}
+
+main().catch((error) => {
   process.exitCode = 1
-  console.error(err.stack)
+  console.error(error.stack)
 })
