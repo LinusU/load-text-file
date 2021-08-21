@@ -1,6 +1,10 @@
-const fs = require('graceful-fs')
-const stripBom = require('strip-bom')
-const pify = require('pify')
+import fs from 'graceful-fs'
+import stripBom from 'strip-bom'
 
-module.exports = (filePath) => pify(fs.readFile)(filePath, 'utf8').then(stripBom)
-module.exports.sync = (filePath) => stripBom(fs.readFileSync(filePath, 'utf8'))
+export async function loadTextFile (path) {
+  return stripBom(await fs.promises.readFile(path, 'utf8'))
+}
+
+export function loadTextFileSync (path) {
+  return stripBom(fs.readFileSync(path, 'utf8'))
+}

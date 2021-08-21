@@ -11,23 +11,34 @@ npm install --save load-text-file
 ## Usage
 
 ```js
-const loadTextFile = require('load-text-file')
+import { loadTextFile } from 'load-text-file'
 
-loadTextFile('foo.txt').then((text) => {
-  console.log(text)
-  //=> Hello, World!
-})
+const text = await loadTextFile('foo.txt')
+console.log(text)
+//=> Hello, World!
+```
+
+### Sync
+
+```js
+import { loadTextFileSync } from 'load-text-file'
+
+const text = loadTextFileSync('foo.txt')
+console.log(text)
+//=> Hello, World!
 ```
 
 ## API
 
-### loadTextFile(filePath)
+### `loadTextFile(path)`
 
-Returns a promise for the text content.
+- `path` (`string | Buffer | URL`, required)
+- returns `Promise<string>` - a promise for the text content
 
-### loadTextFile.sync(filepath)
+### `loadTextFileSync(path)`
 
-Returns the text content.
+- `path` (`string | Buffer | URL`, required)
+- returns `string` - the text content
 
 ## Related
 
